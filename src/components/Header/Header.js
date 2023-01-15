@@ -1,5 +1,11 @@
-import "./Header.css";
+import NavTop from "./NavTop/NavTop.js";
 
-export default function Header() {
-    return <header>Hello World</header>;
+function Header() {
+    return (
+        <header>
+            <NavTop></NavTop>
+        </header>
+    );
 }
+
+export default Header;
