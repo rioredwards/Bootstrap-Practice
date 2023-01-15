@@ -3,8 +3,10 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Image from "react-bootstrap/Image";
+import CustomNavDropdown from "./CustomNavDropdown/CustomNavDropdown.js";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import CustomNavBtn from "./CustomNavBtn/CustomNavBtn.js";
 
 function NavTop() {
   return (
@@ -19,29 +21,19 @@ function NavTop() {
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: "100px" }}
             navbarScroll>
-            <NavDropdown title="Tutorials" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action3">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
+            <CustomNavDropdown title={"Tutorials"}></CustomNavDropdown>
+            <CustomNavDropdown title={"References"}></CustomNavDropdown>
+            <CustomNavDropdown title={"Exercises"}></CustomNavDropdown>
+            <Nav.Link href="#">Videos</Nav.Link>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+          <Nav
+            className="justify-content-end"
+            style={{ maxHeight: "100px", gap: "1rem" }}>
+            <CustomNavBtn text={"Upgrade"} variant={"dark"} />
+            <CustomNavBtn text={"Get Certified"} variant={"warning"} />
+            <CustomNavBtn text={"Create Website"} variant={"danger"} />
+            <CustomNavBtn text={"Login"} variant={"success"} />
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
